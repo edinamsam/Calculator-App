@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <main class="calculator">
+        <header class="calculator-header">
+            <h1>calc</h1>
+
+            <div class="theme-switcher">
+                <span class="theme-label">THEME</span>
+
+                <div class="theme-toggle">
+                    <div class="theme-numbers">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                    </div>
+
+                    <div class="toggle-track">
+                        <div class="toggle-thumb"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="display">
+            <span class="display-text">0</span>
+        </div>
+
+        <div class="keypad">
+            <!-- Row 1 -->
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="del">DEL</button>
+
+            <!-- Row 2-->
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>+</button>
+
+            <!-- Row 3 -->
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>-</button>
+            
+            <!-- Row 4 -->
+            <button>.</button>  
+            <button>-</button>  
+            <button>/</button>  
+            <button>x</button>
+            
+            <!-- Row 5 -->
+            <button class="reset">RESET</button>
+            <button class="equals">=</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
