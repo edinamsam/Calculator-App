@@ -67,6 +67,39 @@ keypad.addEventListener("click", (e) => {
   }
 });
 
+document.addEventListener("keydown", (e) => {
+  if (!isNaN(e.key)) {
+    handleNumber(e.key);
+    return;
+  }
+
+  if (e.key === ".") {
+    handleDecimal();
+    return;
+  }
+
+  if (["+", "-", "*", "/"].includes(e.key)) {
+    const mappedOperator = e.key === "*" ? "x" : e.key;
+    handleOperator(mappedOperator);
+    return;
+  }
+
+  if (e.key === "Enter" || e.key === "=") {
+    handleEquals();
+    return;
+  }
+
+  if (e.key === "Backspace") {
+    handleDelete();
+    return;
+  }
+
+  if (e.key === "Escape") {
+    handleReset();
+    return;
+  }
+});
+
 function handleNumber(number) {
   if (displayValue === "0" || shouldResetDisplay) {
     displayValue = number;
