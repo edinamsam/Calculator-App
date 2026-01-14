@@ -42,8 +42,23 @@ keypad.addEventListener("click", (e) => {
     return;
   }
 
+  if (value === ".") {
+    handleDecimal();
+    return;
+  }
+
   if (isOperator(value)) {
     handleOperator(value);
+    return;
+  }
+
+  if (value === "DEL") {
+    handleDelete();
+    return;
+  }
+
+  if (value === "RESET") {
+    handleReset();
     return;
   }
 
@@ -69,6 +84,27 @@ function handleOperator(op) {
   shouldResetDisplay = true;
 }
 
+function handleDelete() {
+  if (shouldResetDisplay) return;
+
+  if (displayValue.length === 1) {
+    displayValue = "0";
+  } else {
+    displayValue = displayValue.slice(0, -1);
+  }
+
+  updateDisplay();
+}
+
+function handleReset() {
+  displayValue = "0";
+  firstOperand = null;
+  operator = null;
+  shouldResetDisplay = false;
+
+  updateDisplay();
+}
+
 function handleEquals() {
   if (!operator || firstOperand === null) return;
 
@@ -80,4 +116,18 @@ function handleEquals() {
   firstOperand = displayValue;
   operator = null;
   shouldResetDisplay = true;
+}
+
+function handleDecimal() {
+  if (shouldResetDisplay) {
+    displayValue = "0.";
+    shouldResetDisplay = false;
+    updateDisplay();
+    return;
+  }
+
+  if (displayValue.includes(".")) return;
+
+  displayValue += ".";
+  updateDisplay();
 }
