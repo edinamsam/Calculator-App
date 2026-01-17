@@ -97,7 +97,7 @@ body {
     font-size: 10px;
 }
 
-.theme-numbers span:hover {
+.theme-numbers:hover {
     cursor: pointer;
 }
 
