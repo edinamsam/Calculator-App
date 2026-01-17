@@ -178,5 +178,5 @@ themeButtons.forEach((btn) => {
   });
 });
 
-/*const savedTheme = localStorage.getItem("theme") || "1";
-setTheme(savedTheme);*/
+const savedTheme = localStorage.getItem("theme") || "1";
+setTheme(savedTheme);
