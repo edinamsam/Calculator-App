@@ -97,6 +97,10 @@ body {
     font-size: 10px;
 }
 
+.theme-numbers span:hover {
+    cursor: pointer;
+}
+
 .toggle-track {
     width: 60px;
     height: 20px;
