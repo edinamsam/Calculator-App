@@ -1,3 +1,48 @@
+:root {
+    --bg-main: #3a4663;
+    --bg-keypad: #252d44;
+    --bg-display: #181f32;
+
+    --key-bg: #eae3dc;
+    --key-text: #fff;
+
+    --key-fn-bg: #647299;
+    --key-fn-text: #fff;
+
+    --key-equal-bg: #d13f30;
+    --key-equal-text: #fff;
+}
+
+[data-theme="2"] {
+    --bg-main: #e6e6e6;
+    --bg-keypad: #d1cccc;
+    --bg-display: #ededed;
+
+    --key-bg: #e5e4e1;
+    --key-text: #35352c;
+
+    --key-fn-bg: #388187;
+    --key-fn-text: #fff;
+
+    --key-equal-bg: #c85402;
+    --key-equal-text: #fff;
+}
+
+[data-theme="3"] {
+    --bg-main: #17062a;
+    --bg-keypad: #1e0836;
+    --bg-display: #1e0836;
+
+    --key-bg: #331b4d;
+    --key-text: #ffe53d;
+
+    --key-fn-bg: #56077c;
+    --key-fn-text: #fff;
+
+    --key-equal-bg: #00decf;
+    --key-equal-text: #000;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,7 +55,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #3a4663;
+    background: var(--bg-main);
 }
 
 .calculator {
@@ -23,7 +68,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: var(--key-text);
     margin-bottom: 16px;
 }
 
@@ -70,8 +115,8 @@ body {
 }
 
 .display {
-    background: #181f32;
-    color: white;
+    background: var(--bg-display);
+    color: var(--key-text);
     padding: 20px;
     border-radius: 8px;
     text-align: right;
@@ -87,7 +132,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
-    background: #252d44;
+    background: var(--bg-keypad);
     padding: 16px;
     border-radius: 8px;
 }
@@ -99,8 +144,8 @@ button {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    background: #eae3dc;
-    color: #333;
+    background: var(--key-bg);
+    color: var(--key-text);
 }
 
 button:active {
@@ -109,17 +154,17 @@ button:active {
 
 .reset {
     grid-column: 1 / span 2;
-    background: #647299;
-    color: white;
+    background: var(--key-fn-bg);
+    color: var(--key-fn-text);
 }
 
 .equals {
     grid-column: 3 / span 2;
-    background: #d13f30;
-    color: white;
+    background: var(--key-equal-bg);
+    color: var(--key-equal-text);
 }
 
 .del {
-    background: #647299;
-    color: white;
+    background: var(--key-fn-bg);
+    color: var(--key-fn-text);
 }

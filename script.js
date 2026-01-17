@@ -164,3 +164,19 @@ function handleDecimal() {
   displayValue += ".";
   updateDisplay();
 }
+
+const themeButtons = document.querySelectorAll(".theme-numbers span");
+
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+}
+
+themeButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    setTheme(btn.dataset.theme);
+  });
+});
+
+/*const savedTheme = localStorage.getItem("theme") || "1";
+setTheme(savedTheme);*/
