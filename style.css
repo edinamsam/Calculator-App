@@ -28,6 +28,10 @@
     --key-equal-text: #fff;
 }
 
+[data-theme="2"] .toggle-thumb {
+    transform: translateX(20px);
+}
+
 [data-theme="3"] {
     --bg-main: #17062a;
     --bg-keypad: #1e0836;
@@ -41,6 +45,10 @@
 
     --key-equal-bg: #00decf;
     --key-equal-text: #000;
+}
+
+[data-theme="3"] .toggle-thumb {
+    transform: translateX(44px);
 }
 
 * {
@@ -104,18 +112,21 @@ body {
 .toggle-track {
     width: 60px;
     height: 20px;
-    background: #252d44;
+    background: var(--bg-keypad);
     border-radius: 10px;
     padding: 4px;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .toggle-thumb {
     width: 12px;
     height: 12px;
-    background: #d13f30;
+    background: var(--key-equal-bg);
     border-radius: 50%;
+    position: absolute;
+    transition: transform 0.25s ease;
 }
 
 .display {
